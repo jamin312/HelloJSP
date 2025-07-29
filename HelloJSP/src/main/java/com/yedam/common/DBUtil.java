@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class DBUtil {
 	// static 객체 없이도 사용 가능
 	public static SqlSessionFactory getInstance() {
-		String resource = "com/yedam/common/mybatis-config.xml";
+		String resource = "config/mybatis-config.xml";
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
