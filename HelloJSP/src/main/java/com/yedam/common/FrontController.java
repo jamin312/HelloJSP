@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.yedam.control.AddBoardControl;
 import com.yedam.control.BoardControl;
 import com.yedam.control.BoardListControl;
+import com.yedam.control.ModifyBoardControl;
+import com.yedam.control.ModifyFormControl;
 import com.yedam.control.RegisterControl;
 
 // init - service - destroy
@@ -34,6 +36,8 @@ public class FrontController extends HttpServlet {
 		map.put("/board.do", new BoardControl()); // 상세 화면
 		map.put("/register.do", new RegisterControl()); // 등록 화면
 		map.put("/addBoard.do", new AddBoardControl()); // 등록 처리
+		map.put("/modifyForm.do", new ModifyFormControl()); // 수정 화면
+		map.put("/modifyBoard.do", new ModifyBoardControl()); // 수정 처리
 	}
 
 	@Override
