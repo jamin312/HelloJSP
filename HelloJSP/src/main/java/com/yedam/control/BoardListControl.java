@@ -42,6 +42,7 @@ public class BoardListControl implements Control {
 		// jsp(뷰역할) 페이지에 데이터 전달
 		req.setAttribute("board_list", list);
 		req.setAttribute("paging", paging);
+		req.setAttribute("page", page);
 		req.setAttribute("searchCondition", sc);
 		req.setAttribute("keyword", kw);
 		

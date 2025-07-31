@@ -40,7 +40,7 @@ public class ModifyBoardControl implements Control {
 		
 		BoardService svc = new BoardServiceImpl();
 		if(svc.modifyBoard(param, search)) {
-			resp.sendRedirect("boardList.do?searchCondition=#{sc}W&keyword=#{kw}&page=#{page}");
+			resp.sendRedirect("boardList.do?searchCondition=" + sc + "&keyword=" + kw + "&page=" + page);
 		} else {
 			System.out.println("에러 발생");
 		}

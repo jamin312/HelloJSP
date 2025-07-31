@@ -42,7 +42,10 @@
 	<tr>
 		<td colspan="3" align="right">
 			<form action="modifyForm.do">
-				<input type="hidden" value="${board_info.boardNo }" name="bno">
+				<input type="hidden" name="bno" value="${board_info.boardNo}">
+				<input type="hidden" name="page" value="${param.page}">
+				<input type="hidden" name="searchCondition" value="${param.searchCondition}">
+				<input type="hidden" name="keyword" value="${param.keyword}">
 				<input type="submit" value="수정" class="btn btn-success">
 			</form>
 		</td>

@@ -18,6 +18,9 @@ public class ModifyFormControl implements Control {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 수정화면 bno=?
 		String bno = req.getParameter("bno");
+		String page = req.getParameter("page");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
 		
 		// DB조회
 		BoardService svc = new BoardServiceImpl();
@@ -26,6 +29,11 @@ public class ModifyFormControl implements Control {
 		// 권한확인 (로그인 아이디 vs 작성자 아이디)
 		HttpSession session = req.getSession();
 		String logId = (String) session.getAttribute("logId");
+		
+		req.setAttribute("page", page);
+		req.setAttribute("searchCondition", sc);
+		req.setAttribute("keyword", kw);
+		req.setAttribute("board_info", board);
 		
 		if(logId != null && logId.equals(board.getWriter())) {
 			// view영역(jsp)로 값을 전달

@@ -9,9 +9,9 @@
 <h3>글수정화면</h3>
 <form action="modifyBoard.do">
 <input type="hidden" value="${board_info.boardNo }" name="bno">
-<input type="hidden" value="${board.jsp.page }" name="page">
-<input type="hidden" value="${board.jsp.keyword }" name="keyword">
-<input type="hidden" value="${board.jsp.searchCondition }" name="searchCondition">
+<input type="hidden" name="page" value="${empty param.page ? 1 : param.page}">
+<input type="hidden" name="keyword" value="${param.keyword}">
+<input type="hidden" name="searchCondition" value="${param.searchCondition}">
 <table class="table">
 	<tr>
 		<th>글번호</th>
