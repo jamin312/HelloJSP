@@ -7,6 +7,15 @@
 
 <h3>글상세화면(board.jsp)</h3>
 
+<c:if test="${!empty msg }">
+<div style="color: red;">${msg}</div>
+</c:if>
+
+<c:if test="${not empty msg}">
+  <script>
+    alert('${msg}');
+  </script>
+</c:if>
 
 <table class="table">
 	<tr>
@@ -40,7 +49,7 @@
 		<td colspan="3" align="left">
 			<form action="removeBoard.do">
 				<input type="hidden" value="${board_info.boardNo }" name="bno">
-				<button type="submit" class="btn btn-danger">삭제</button>
+				<button type="submit" class="btn btn-danger" ${logId eq board_info.writer ? '' : 'disabled'}>삭제</button>
 			</form>
 		</td>
 	</tr>

@@ -58,7 +58,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean modifyBoard(BoardVO board) {
+	public boolean modifyBoard(BoardVO board, SearchDTO search) {
 		int r = mapper.updateBoard(board);
 		if (r > 0) {
 			sqlSession.commit();

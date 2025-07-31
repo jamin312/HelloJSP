@@ -1,4 +1,5 @@
 <%@page import="com.yedam.vo.BoardVO"%>
+<%@page import="com.yedam.common.SearchDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -8,6 +9,9 @@
 <h3>글수정화면</h3>
 <form action="modifyBoard.do">
 <input type="hidden" value="${board_info.boardNo }" name="bno">
+<input type="hidden" value="${board.jsp.page }" name="page">
+<input type="hidden" value="${board.jsp.keyword }" name="keyword">
+<input type="hidden" value="${board.jsp.searchCondition }" name="searchCondition">
 <table class="table">
 	<tr>
 		<th>글번호</th>
